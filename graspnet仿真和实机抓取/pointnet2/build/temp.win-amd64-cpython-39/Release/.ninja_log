@@ -1,0 +1,12 @@
+# ninja log v6
+1359	61286	7658171290646658	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/group_points.obj	99ea547a66b16f12
+23	61315	7658171277287780	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/ball_query.obj	43e787e67e1df962
+771	61334	7658171284771172	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/cylinder_query.obj	b3f6e39020b1010b
+541	61360	7658171282465694	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/bindings.obj	8ee689ccfd64e0e9
+2873	61659	7658171305791114	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/sampling.obj	47d2dfe7c4cb0450
+1941	61868	7658171296471799	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/interpolate.obj	a41e4cc9939b0ffb
+233	63751	7658171279391765	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/ball_query_gpu.obj	fdb89337ef9a9318
+997	63879	7658171287031527	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/cylinder_query_gpu.obj	95993e71a67b6d39
+2212	64368	7658171299181113	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/interpolate_gpu.obj	e461a66283c14a3c
+3128	66840	7658171308340704	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/sampling_gpu.obj	a381bebe384099de
+1635	95263	7658171293415788	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-39/Release/_ext_src/src/group_points_gpu.obj	6567f16972ecdcdf

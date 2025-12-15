@@ -1,0 +1,7 @@
+# ninja log v6
+3813	14552	7657452264748820	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-37/Release/_ext_src/src/sampling.obj	b52d02716a322948
+18	14619	7657452226795980	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-37/Release/_ext_src/src/ball_query.obj	e9aea20720cc81bb
+2614	14637	7657452252760163	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-37/Release/_ext_src/src/interpolate.obj	3ddb9f7f62d1f7d3
+1822	14651	7657452244840981	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-37/Release/_ext_src/src/group_points.obj	54a161b0574c829e
+1114	14741	7657452237765086	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-37/Release/_ext_src/src/cylinder_query.obj	1d727752ca986a5c
+657	14803	7657452233189144	D:/studentcreate/graspnet-baseline/pointnet2/build/temp.win-amd64-cpython-37/Release/_ext_src/src/bindings.obj	80e0352dac41c2d3

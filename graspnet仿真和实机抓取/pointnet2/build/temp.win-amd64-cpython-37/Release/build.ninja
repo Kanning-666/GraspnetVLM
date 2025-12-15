@@ -1,0 +1,42 @@
+ninja_required_version = 1.3
+cxx = cl
+nvcc = D:\gpu\cuda11.7\bin\nvcc
+
+cflags = /nologo /O2 /W3 /GL /DNDEBUG /MD /MD /wd4819 /wd4251 /wd4244 /wd4267 /wd4275 /wd4018 /wd4190 /EHsc -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include\torch\csrc\api\include -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include\TH -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include\THC -ID:\gpu\cuda11.7\include -IF:\anaconda\envs\graspnet\include -IF:\anaconda\envs\graspnet\Include "-IE:\visual studio(community)\IDE\VC\Tools\MSVC\14.41.34120\include" "-IE:\visual studio(community)\IDE\VC\Tools\MSVC\14.41.34120\ATLMFC\include" "-IE:\visual studio(community)\IDE\VC\Auxiliary\VS\include" "-IE:\Windows Kits\10\include\10.0.26100.0\ucrt" "-IE:\Windows Kits\10\\include\10.0.26100.0\\um" "-IE:\Windows Kits\10\\include\10.0.26100.0\\shared" "-IE:\Windows Kits\10\\include\10.0.26100.0\\winrt" "-IE:\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
+post_cflags = -O2 -ID:\studentcreate\graspnet-baseline\pointnet2/_ext_src/include -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0 /std:c++14
+cuda_cflags = --use-local-env -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /EHsc -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include\torch\csrc\api\include -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include\TH -IF:\anaconda\envs\graspnet\lib\site-packages\torch\include\THC -ID:\gpu\cuda11.7\include -IF:\anaconda\envs\graspnet\include -IF:\anaconda\envs\graspnet\Include "-IE:\visual studio(community)\IDE\VC\Tools\MSVC\14.41.34120\include" "-IE:\visual studio(community)\IDE\VC\Tools\MSVC\14.41.34120\ATLMFC\include" "-IE:\visual studio(community)\IDE\VC\Auxiliary\VS\include" "-IE:\Windows Kits\10\include\10.0.26100.0\ucrt" "-IE:\Windows Kits\10\\include\10.0.26100.0\\um" "-IE:\Windows Kits\10\\include\10.0.26100.0\\shared" "-IE:\Windows Kits\10\\include\10.0.26100.0\\winrt" "-IE:\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -O2 -ID:\studentcreate\graspnet-baseline\pointnet2/_ext_src/include -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = cl /showIncludes $cflags -c $in /Fo$out $post_cflags
+  deps = msvc
+
+rule cuda_compile
+  depfile = $out.d
+  deps = gcc
+  command = $nvcc --generate-dependencies-with-compile --dependency-output $out.d $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+
+
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\ball_query.obj: compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\ball_query.cpp
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\ball_query_gpu.obj: cuda_compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\ball_query_gpu.cu
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\bindings.obj: compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\bindings.cpp
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\cylinder_query.obj: compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\cylinder_query.cpp
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\cylinder_query_gpu.obj: cuda_compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\cylinder_query_gpu.cu
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\group_points.obj: compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\group_points.cpp
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\group_points_gpu.obj: cuda_compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\group_points_gpu.cu
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\interpolate.obj: compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\interpolate.cpp
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\interpolate_gpu.obj: cuda_compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\interpolate_gpu.cu
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\sampling.obj: compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\sampling.cpp
+build D$:\studentcreate\graspnet-baseline\pointnet2\build\temp.win-amd64-cpython-37\Release\_ext_src/src\sampling_gpu.obj: cuda_compile D$:\studentcreate\graspnet-baseline\pointnet2\_ext_src\src\sampling_gpu.cu
+
+
+
+
+
+
+

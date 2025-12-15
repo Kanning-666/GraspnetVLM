@@ -1,0 +1,4 @@
+# ninja log v6
+3	1271	7658299874359202	D:/studentcreate/graspnet-baseline/knn/build/temp.win-amd64-cpython-39/Release/studentcreate/graspnet-baseline/knn/src/cuda/knn.obj	7fd5b1fd97590196
+1	20724	7658299874335513	D:/studentcreate/graspnet-baseline/knn/build/temp.win-amd64-cpython-39/Release/studentcreate/graspnet-baseline/knn/src/cpu/knn_cpu.obj	5be53561c80c553c
+6	21229	7658299874392034	D:/studentcreate/graspnet-baseline/knn/build/temp.win-amd64-cpython-39/Release/studentcreate/graspnet-baseline/knn/src/vision.obj	28d74f435c483d7b
